@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ADCF923249FECEE00C24B2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1ADCF922249FECED00C24B2B /* GoogleService-Info.plist */; };
 		87521902249E65DF00AA3E9D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521901249E65DF00AA3E9D /* LogInViewController.swift */; };
 		87521906249E697500AA3E9D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521905249E697500AA3E9D /* SignUpViewController.swift */; };
 		87521908249E6CAE00AA3E9D /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521907249E6CAE00AA3E9D /* MoodViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1ADCF922249FECED00C24B2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D9FC3FF5C4A6DCC02D46E65 /* Pods-FirstPlate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstPlate.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstPlate/Pods-FirstPlate.release.xcconfig"; sourceTree = "<group>"; };
 		87521901249E65DF00AA3E9D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		87521905249E697500AA3E9D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		8782799C247BC7C9008034F6 = {
 			isa = PBXGroup;
 			children = (
+				1ADCF922249FECED00C24B2B /* GoogleService-Info.plist */,
 				87521919249FA2A600AA3E9D /* Podfile */,
 				878279A7247BC7C9008034F6 /* FirstPlate */,
 				878279A6247BC7C9008034F6 /* Products */,
@@ -212,6 +215,7 @@
 				878279C0247BCA4A008034F6 /* icon-ios7-arrow-back-512.png in Resources */,
 				878279B3247BC7CC008034F6 /* Assets.xcassets in Resources */,
 				878279AE247BC7CA008034F6 /* Main.storyboard in Resources */,
+				1ADCF923249FECEE00C24B2B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,23 +227,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FirstPlate/Pods-FirstPlate-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirstPlate/Pods-FirstPlate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirstPlate/Pods-FirstPlate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirstPlate/Pods-FirstPlate-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirstPlate/Pods-FirstPlate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A72CFA5FA62C65113A05C785 /* [CP] Check Pods Manifest.lock */ = {
