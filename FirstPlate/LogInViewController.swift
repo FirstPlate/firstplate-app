@@ -7,14 +7,34 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
+    
+    var handle: AuthStateDidChangeListenerHandle?
+
 
     @IBOutlet var EmailTextField: UITextField!
     
     @IBOutlet var PasswordTextField: UITextField!
     
     @IBAction func LogInButtonClicked(_ sender: Any) {
+        
+        let email = EmailTextField.text!
+        let password = PasswordTextField.text!
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+           
+            if error != nil{
+                print(error.debugDescription)
+                print("CaNNOT LOGIN")
+                
+                let uialert = UIAlertController(title: "Cannot Login. Check your password.", message: "Oops", preferredStyle: UIAlertController.Style.alert)
+                   uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                self!.present(uialert, animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -37,6 +57,21 @@ class LogInViewController: UIViewController {
         
         return true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+                
+            if Auth.auth().currentUser != nil {
+                self.performSegue(withIdentifier: "showScreen", sender: UIButton.self)
+            } else {
+               //User Not logged in
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
 
     
