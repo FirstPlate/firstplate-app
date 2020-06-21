@@ -15,6 +15,13 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
 
     let locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
+    
+    var viewModels = [RestaurantListViewModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,21 +39,30 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
         if let coord = manager.location?.coordinate {
             
             let locationDictionary : [String:Any] = ["latitude":coord.latitude,"longitude":coord.longitude]
+            UserDefaults.standard.set(coord.latitude, forKey: "lat")
+            UserDefaults.standard.set(coord.longitude, forKey: "lon")
+
         }
     }
 
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return viewModels.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantTableViewCell
+        
+        let vm = viewModels[indexPath.row]
+        cell.configure(with: vm)
+        
+        return cell
+    }
+
 
 
 }
