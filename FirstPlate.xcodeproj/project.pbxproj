@@ -12,6 +12,11 @@
 		87521908249E6CAE00AA3E9D /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521907249E6CAE00AA3E9D /* MoodViewController.swift */; };
 		8752190A249E7A2600AA3E9D /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521909249E7A2600AA3E9D /* CheckBoxButton.swift */; };
 		8752190C249F683B00AA3E9D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752190B249F683B00AA3E9D /* Cell.swift */; };
+		8752190F249F936A00AA3E9D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752190E249F936A00AA3E9D /* BaseView.swift */; };
+		87521912249F960900AA3E9D /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521911249F960900AA3E9D /* RestaurantTableViewController.swift */; };
+		87521914249F963D00AA3E9D /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521913249F963D00AA3E9D /* RestaurantTableViewCell.swift */; };
+		87521916249F96ED00AA3E9D /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521915249F96ED00AA3E9D /* LocationView.swift */; };
+		87521918249F98C700AA3E9D /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521917249F98C700AA3E9D /* LocationService.swift */; };
 		878279A9247BC7C9008034F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878279A8247BC7C9008034F6 /* AppDelegate.swift */; };
 		878279AB247BC7C9008034F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878279AA247BC7C9008034F6 /* ViewController.swift */; };
 		878279AE247BC7CA008034F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878279AC247BC7CA008034F6 /* Main.storyboard */; };
@@ -28,6 +33,11 @@
 		87521907249E6CAE00AA3E9D /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		87521909249E7A2600AA3E9D /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		8752190B249F683B00AA3E9D /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		8752190E249F936A00AA3E9D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		87521911249F960900AA3E9D /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		87521913249F963D00AA3E9D /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		87521915249F96ED00AA3E9D /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		87521917249F98C700AA3E9D /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		878279A5247BC7C9008034F6 /* FirstPlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstPlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878279A8247BC7C9008034F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		878279AA247BC7C9008034F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +61,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8752190D249F932A00AA3E9D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				87521910249F957000AA3E9D /* New Group */,
+				8752190E249F936A00AA3E9D /* BaseView.swift */,
+				87521915249F96ED00AA3E9D /* LocationView.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		87521910249F957000AA3E9D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				87521911249F960900AA3E9D /* RestaurantTableViewController.swift */,
+				87521913249F963D00AA3E9D /* RestaurantTableViewCell.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		8782799C247BC7C9008034F6 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +99,7 @@
 		878279A7247BC7C9008034F6 /* FirstPlate */ = {
 			isa = PBXGroup;
 			children = (
+				8752190D249F932A00AA3E9D /* New Group */,
 				878279A8247BC7C9008034F6 /* AppDelegate.swift */,
 				878279AA247BC7C9008034F6 /* ViewController.swift */,
 				878279AC247BC7CA008034F6 /* Main.storyboard */,
@@ -84,6 +114,7 @@
 				878279AF247BC7CA008034F6 /* FirstPlate.xcdatamodeld */,
 				878279BD247BC7F7008034F6 /* launch.png */,
 				878279BF247BCA4A008034F6 /* icon-ios7-arrow-back-512.png */,
+				87521917249F98C700AA3E9D /* LocationService.swift */,
 			);
 			path = FirstPlate;
 			sourceTree = "<group>";
@@ -162,11 +193,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				87521902249E65DF00AA3E9D /* LogInViewController.swift in Sources */,
+				87521916249F96ED00AA3E9D /* LocationView.swift in Sources */,
 				878279AB247BC7C9008034F6 /* ViewController.swift in Sources */,
+				87521912249F960900AA3E9D /* RestaurantTableViewController.swift in Sources */,
+				87521914249F963D00AA3E9D /* RestaurantTableViewCell.swift in Sources */,
 				878279A9247BC7C9008034F6 /* AppDelegate.swift in Sources */,
 				878279B1247BC7CA008034F6 /* FirstPlate.xcdatamodeld in Sources */,
 				8752190A249E7A2600AA3E9D /* CheckBoxButton.swift in Sources */,
 				8752190C249F683B00AA3E9D /* Cell.swift in Sources */,
+				87521918249F98C700AA3E9D /* LocationService.swift in Sources */,
+				8752190F249F936A00AA3E9D /* BaseView.swift in Sources */,
 				87521906249E697500AA3E9D /* SignUpViewController.swift in Sources */,
 				87521908249E6CAE00AA3E9D /* MoodViewController.swift in Sources */,
 			);
