@@ -3,7 +3,7 @@
 //  FirstPlate
 //
 //  Created by Maanav Khaitan on 25/05/20.
-//  Copyright © 2020 FirstPlate. All rights reserved.
+//  Copyright © 2020 Maanav Khaitan. All rights reserved.
 //
 
 import UIKit
