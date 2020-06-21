@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		87521902249E65DF00AA3E9D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521901249E65DF00AA3E9D /* LogInViewController.swift */; };
 		87521906249E697500AA3E9D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521905249E697500AA3E9D /* SignUpViewController.swift */; };
+		87521908249E6CAE00AA3E9D /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521907249E6CAE00AA3E9D /* MoodViewController.swift */; };
+		8752190A249E7A2600AA3E9D /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87521909249E7A2600AA3E9D /* CheckBoxButton.swift */; };
+		8752190C249F683B00AA3E9D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752190B249F683B00AA3E9D /* Cell.swift */; };
 		878279A9247BC7C9008034F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878279A8247BC7C9008034F6 /* AppDelegate.swift */; };
 		878279AB247BC7C9008034F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878279AA247BC7C9008034F6 /* ViewController.swift */; };
 		878279AE247BC7CA008034F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878279AC247BC7CA008034F6 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		87521901249E65DF00AA3E9D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		87521905249E697500AA3E9D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		87521907249E6CAE00AA3E9D /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
+		87521909249E7A2600AA3E9D /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		8752190B249F683B00AA3E9D /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		878279A5247BC7C9008034F6 /* FirstPlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstPlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878279A8247BC7C9008034F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		878279AA247BC7C9008034F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 				878279A8247BC7C9008034F6 /* AppDelegate.swift */,
 				878279AA247BC7C9008034F6 /* ViewController.swift */,
 				878279AC247BC7CA008034F6 /* Main.storyboard */,
+				8752190B249F683B00AA3E9D /* Cell.swift */,
+				87521909249E7A2600AA3E9D /* CheckBoxButton.swift */,
+				87521907249E6CAE00AA3E9D /* MoodViewController.swift */,
 				87521905249E697500AA3E9D /* SignUpViewController.swift */,
 				87521901249E65DF00AA3E9D /* LogInViewController.swift */,
 				878279B2247BC7CC008034F6 /* Assets.xcassets */,
@@ -156,7 +165,10 @@
 				878279AB247BC7C9008034F6 /* ViewController.swift in Sources */,
 				878279A9247BC7C9008034F6 /* AppDelegate.swift in Sources */,
 				878279B1247BC7CA008034F6 /* FirstPlate.xcdatamodeld in Sources */,
+				8752190A249E7A2600AA3E9D /* CheckBoxButton.swift in Sources */,
+				8752190C249F683B00AA3E9D /* Cell.swift in Sources */,
 				87521906249E697500AA3E9D /* SignUpViewController.swift in Sources */,
+				87521908249E6CAE00AA3E9D /* MoodViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
