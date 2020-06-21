@@ -313,7 +313,7 @@
             </objects>
             <point key="canvasLocation" x="2286.9565217391305" y="134.59821428571428"/>
         </scene>
-        <!--Restaurants-->
+        <!--Restaurants For You-->
         <scene sceneID="xxD-0Y-kai">
             <objects>
                 <tableViewController id="Bpv-Cl-0Rl" customClass="RestaurantTableViewController" customModule="FirstPlate" customModuleProvider="target" sceneMemberID="viewController">
@@ -402,7 +402,7 @@
                             <outlet property="delegate" destination="Bpv-Cl-0Rl" id="9pT-V3-yaO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Restaurants" id="p8z-uR-ndi"/>
+                    <navigationItem key="navigationItem" title="Restaurants For You" id="p8z-uR-ndi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfH-t0-l8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
