@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol ListActions: class {
+    func didTapCell(viewModel: RestaurantListViewModel)
+}
+
 
 class RestaurantTableViewController: UITableViewController, CLLocationManagerDelegate {
 
@@ -21,6 +25,7 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
             tableView.reloadData()
         }
     }
+    weak var delegete: ListActions?
 
 
     override func viewDidLoad() {
@@ -62,6 +67,15 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
         
         return cell
     }
+    
+    
+    // MARK: - Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vm = viewModels[indexPath.row]
+        delegete?.didTapCell(viewModel: vm)
+    }
+
 
 
 

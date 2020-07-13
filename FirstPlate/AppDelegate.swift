@@ -29,10 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
         let nav = storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
+        self.navigationController = nav
         window?.rootViewController = nav
+        (nav?.topViewController as? RestaurantTableViewController)?.delegete = self
+
         var latitude = UserDefaults.standard.double(forKey: "lat")
         var longitude = UserDefaults.standard.double(forKey: "lon")
         var coordinate = CLLocationCoordinate2DMake(latitude, longitude)
@@ -59,7 +63,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
     }
+    
+    private func loadDetails(withId id: String) {
+        service.request(.details(id:id)) { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                guard let strongSelf = self else { return }
+                if let details = try? strongSelf.jsonDecoder.decode(Details.self, from: response.data) {
+                let detailsViewModel = DetailsViewModel(details: details)
+                (strongSelf.navigationController?.topViewController as? DetailsFoodViewController)?.viewModel = detailsViewModel
+                    
+                } 
+            case .failure(let error):
+                print("Failed to get details \(error)")
+            }
+        }
+    }
 
 
 }
+
+extension AppDelegate: ListActions {
+    func didTapCell(viewModel: RestaurantListViewModel) {
+        loadDetails(withId: viewModel.id)
+    }
+}
+
 
