@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
+import Moya
+import CoreData
+import Firebase
+
 
 var rowsWhichAreChecked = [NSIndexPath]()
 var rowsWhichAreCheckedIndices = [Int]()
@@ -18,6 +23,12 @@ class MoodViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
     @IBOutlet var tableView: UITableView!
+    
+    var window: UIWindow?
+    // let window = UIWindow()
+    let service = MoyaProvider<YelpService.BusinessesProvider>()
+    let jsonDecoder = JSONDecoder()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +105,37 @@ class MoodViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         UserDefaults.standard.set(userMoodLabels, forKey: "userMoodLabels")
         print(UserDefaults.standard.stringArray(forKey: "userMoodLabels"))
+        
+        var window: UIWindow?
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
+        window?.rootViewController = nav
+        
+        var latitude = UserDefaults.standard.double(forKey: "lat")
+        var longitude = UserDefaults.standard.double(forKey: "lon")
+        var coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        loadBusinesses(with: coordinate)
+
+
+    }
+    
+    private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
+        
+        service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let response):
+                let root = try? strongSelf.jsonDecoder.decode(Root.self, from: response.data)
+                let viewModels = root?.businesses.compactMap(RestaurantListViewModel.init).sorted(by: { $0.distance < $1.distance })
+                if let nav = strongSelf.window?.rootViewController as? UINavigationController,
+                    let restaurantListViewController = nav.topViewController as? RestaurantTableViewController {
+                    restaurantListViewController.viewModels = viewModels ?? []
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+        
     }
     
 

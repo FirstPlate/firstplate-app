@@ -21,6 +21,7 @@
 		8752191A249FA2A600AA3E9D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 87521919249FA2A600AA3E9D /* Podfile */; };
 		8752191C249FDB8200AA3E9D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752191B249FDB8200AA3E9D /* NetworkService.swift */; };
 		8752191E249FDEEA00AA3E9D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752191D249FDEEA00AA3E9D /* Models.swift */; };
+		8779327D24BC6F8E004EA4B2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8779327C24BC6F8E004EA4B2 /* ProfileViewController.swift */; };
 		878279A9247BC7C9008034F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878279A8247BC7C9008034F6 /* AppDelegate.swift */; };
 		878279AB247BC7C9008034F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878279AA247BC7C9008034F6 /* ViewController.swift */; };
 		878279AE247BC7CA008034F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878279AC247BC7CA008034F6 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		87521919249FA2A600AA3E9D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8752191B249FDB8200AA3E9D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8752191D249FDEEA00AA3E9D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8779327C24BC6F8E004EA4B2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		878279A5247BC7C9008034F6 /* FirstPlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstPlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878279A8247BC7C9008034F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		878279AA247BC7C9008034F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				878279A8247BC7C9008034F6 /* AppDelegate.swift */,
 				878279AA247BC7C9008034F6 /* ViewController.swift */,
 				878279AC247BC7CA008034F6 /* Main.storyboard */,
+				8779327C24BC6F8E004EA4B2 /* ProfileViewController.swift */,
 				8752190B249F683B00AA3E9D /* Cell.swift */,
 				87521909249E7A2600AA3E9D /* CheckBoxButton.swift */,
 				87521907249E6CAE00AA3E9D /* MoodViewController.swift */,
@@ -276,6 +279,7 @@
 				87521912249F960900AA3E9D /* RestaurantTableViewController.swift in Sources */,
 				87521914249F963D00AA3E9D /* RestaurantTableViewCell.swift in Sources */,
 				878279A9247BC7C9008034F6 /* AppDelegate.swift in Sources */,
+				8779327D24BC6F8E004EA4B2 /* ProfileViewController.swift in Sources */,
 				8752191C249FDB8200AA3E9D /* NetworkService.swift in Sources */,
 				878279B1247BC7CA008034F6 /* FirstPlate.xcdatamodeld in Sources */,
 				8752190A249E7A2600AA3E9D /* CheckBoxButton.swift in Sources */,
