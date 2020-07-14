@@ -38,10 +38,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             print(Auth.auth().currentUser?.email)
             if Auth.auth().currentUser != nil {
+                if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MoodViewController") as? MoodViewController {
+                    if let window = self.window, let rootViewController = window.rootViewController {
+                        var currentController = rootViewController
+                        while let presentedController = currentController.presentedViewController {
+                            currentController = presentedController
+                        }
+                        currentController.present(controller, animated: true, completion: nil)
+                    }
+                }
+
+                /*
                 let nav = self.storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
                 self.navigationController = nav
                 self.window?.rootViewController = nav
                 (nav?.topViewController as? RestaurantTableViewController)?.delegete = self
+                */
             } else {
                 //User Not logged in
             }
