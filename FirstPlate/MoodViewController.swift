@@ -106,15 +106,20 @@ class MoodViewController: UIViewController, UITableViewDataSource, UITableViewDe
         UserDefaults.standard.set(userMoodLabels, forKey: "userMoodLabels")
         print(UserDefaults.standard.stringArray(forKey: "userMoodLabels"))
         
+        
         var window: UIWindow?
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nav = storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
+        var navigationController: UINavigationController?
+        navigationController = nav
         window?.rootViewController = nav
-        
+
         var latitude = UserDefaults.standard.double(forKey: "lat")
         var longitude = UserDefaults.standard.double(forKey: "lon")
         var coordinate = CLLocationCoordinate2DMake(latitude, longitude)
         loadBusinesses(with: coordinate)
+ 
+         
 
 
     }

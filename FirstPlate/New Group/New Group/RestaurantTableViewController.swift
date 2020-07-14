@@ -19,6 +19,8 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
 
     let locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
+    var window: UIWindow?
+    
     
     var viewModels = [RestaurantListViewModel]() {
         didSet {
@@ -36,6 +38,8 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        
+
         
     }
     

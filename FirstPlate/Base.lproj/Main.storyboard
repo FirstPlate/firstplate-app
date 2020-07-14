@@ -572,7 +572,7 @@
         <!--Title-->
         <scene sceneID="Njp-4a-0Xw">
             <objects>
-                <viewController id="FCb-d1-tep" customClass="DetailsFoodViewController" customModule="FirstPlate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="FCb-d1-tep" customClass="DetailsFoodViewController" customModule="FirstPlate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="duH-5a-J00" customClass="DetailsFoodView" customModule="FirstPlate" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

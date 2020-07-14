@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             print(Auth.auth().currentUser?.email)
             if Auth.auth().currentUser != nil {
+                
+                /*
                 if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MoodViewController") as? MoodViewController {
                     if let window = self.window, let rootViewController = window.rootViewController {
                         var currentController = rootViewController
@@ -47,29 +49,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         currentController.present(controller, animated: true, completion: nil)
                     }
                 }
-
-                /*
+                */
+ 
                 let nav = self.storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
                 self.navigationController = nav
                 self.window?.rootViewController = nav
                 (nav?.topViewController as? RestaurantTableViewController)?.delegete = self
-                */
+                
+                
             } else {
                 //User Not logged in
             }
         }
 
-        
         var latitude = UserDefaults.standard.double(forKey: "lat")
         var longitude = UserDefaults.standard.double(forKey: "lon")
         var coordinate = CLLocationCoordinate2DMake(latitude, longitude)
         loadBusinesses(with: coordinate)
+
         
         return true
     }
     
     
-    private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
+    public func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
         service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
             guard let strongSelf = self else { return }
             switch result {
@@ -107,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: ListActions {
+    
     func didTapCell(viewModel: RestaurantListViewModel) {
         loadDetails(withId: viewModel.id)
     }
