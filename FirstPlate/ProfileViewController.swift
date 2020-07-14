@@ -61,5 +61,13 @@ class ProfileViewController: UIViewController {
         confirmationLabel.text = ""
     }
 
+    @IBAction func logOutClick(_ sender: Any) {
+        
+        print("logged out")
+        try! Auth.auth().signOut()
+
+    }
+    
+
     
 }

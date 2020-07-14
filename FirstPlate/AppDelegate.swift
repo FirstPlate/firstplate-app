@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let jsonDecoder = JSONDecoder()
     var navigationController: UINavigationController?
 
-    
+    var handle: AuthStateDidChangeListenerHandle?
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -33,11 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        /* let nav = storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
-        self.navigationController = nav
-        window?.rootViewController = nav
-        (nav?.topViewController as? RestaurantTableViewController)?.delegete = self
-        */
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            
+            print(Auth.auth().currentUser?.email)
+            if Auth.auth().currentUser != nil {
+                let nav = self.storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
+                self.navigationController = nav
+                self.window?.rootViewController = nav
+                (nav?.topViewController as? RestaurantTableViewController)?.delegete = self
+            } else {
+                //User Not logged in
+            }
+        }
+
         
         var latitude = UserDefaults.standard.double(forKey: "lat")
         var longitude = UserDefaults.standard.double(forKey: "lon")

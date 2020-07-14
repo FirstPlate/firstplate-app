@@ -513,6 +513,29 @@
                                 <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vP-2p-Fx5">
+                                <rect key="frame" x="126.5" y="523" width="161" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.47492731030000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="eJD-oz-gSj"/>
+                                    <constraint firstAttribute="width" constant="161" id="owz-L7-xam"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logOutClick:" destination="h1O-GY-Foe" eventType="touchUpInside" id="1o5-ne-bjD"/>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="2vP-2p-Fx5" id="QsA-V7-sbh">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -524,24 +547,18 @@
                             <constraint firstItem="ahg-XX-LfD" firstAttribute="top" secondItem="l7T-Zw-HRZ" secondAttribute="bottom" constant="63" id="U3A-3y-3QX"/>
                             <constraint firstItem="HnC-oL-oyI" firstAttribute="top" secondItem="UYG-gw-Nhh" secondAttribute="bottom" constant="34" id="XzA-EC-SqM"/>
                             <constraint firstItem="UYG-gw-Nhh" firstAttribute="leading" secondItem="OVk-Ao-3wU" secondAttribute="leading" constant="19.5" id="YOz-b7-Xe2"/>
+                            <constraint firstItem="2vP-2p-Fx5" firstAttribute="centerX" secondItem="gj5-FA-d6j" secondAttribute="centerX" id="bVP-TU-HvT"/>
                             <constraint firstItem="pZG-9r-aKJ" firstAttribute="leading" secondItem="OVk-Ao-3wU" secondAttribute="leading" constant="20" id="hJW-Ub-Xno"/>
                             <constraint firstItem="UYG-gw-Nhh" firstAttribute="top" secondItem="pZG-9r-aKJ" secondAttribute="bottom" constant="8" id="jna-L9-zfX"/>
                             <constraint firstItem="NlB-Qb-hbU" firstAttribute="centerX" secondItem="gj5-FA-d6j" secondAttribute="centerX" id="qok-Ok-aFP"/>
                             <constraint firstItem="l7T-Zw-HRZ" firstAttribute="top" secondItem="HnC-oL-oyI" secondAttribute="bottom" constant="8" id="uTr-MP-pHp"/>
                             <constraint firstItem="pZG-9r-aKJ" firstAttribute="top" secondItem="a0b-1g-Oqo" secondAttribute="bottom" constant="37" id="v9E-1R-Yae"/>
                             <constraint firstItem="HnC-oL-oyI" firstAttribute="leading" secondItem="OVk-Ao-3wU" secondAttribute="leading" constant="20" id="vgd-gK-dWD"/>
+                            <constraint firstItem="2vP-2p-Fx5" firstAttribute="top" secondItem="NlB-Qb-hbU" secondAttribute="bottom" constant="34" id="xTG-pK-LMt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OVk-Ao-3wU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Profile" id="gNY-9j-PLC">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="CcR-Yh-jxZ">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="CcR-Yh-jxZ" id="sB0-mI-ZPu">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Profile" id="gNY-9j-PLC"/>
                     <connections>
                         <outlet property="confirmationLabel" destination="NlB-Qb-hbU" id="YDp-fD-ICC"/>
                         <outlet property="emailTextField" destination="l7T-Zw-HRZ" id="Vkh-zT-m1V"/>
@@ -772,6 +789,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rxN-GJ-7BB"/>
-        <segue reference="sB0-mI-ZPu"/>
+        <segue reference="QsA-V7-sbh"/>
     </inferredMetricsTieBreakers>
 </document>
