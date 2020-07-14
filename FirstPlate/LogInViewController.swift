@@ -34,6 +34,9 @@ class LogInViewController: UIViewController {
                    uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
                 self!.present(uialert, animated: true, completion: nil)
             }
+            
+            self?.performSegue(withIdentifier: "showScreen", sender: UIButton.self)
+
         }
     }
     
@@ -63,7 +66,7 @@ class LogInViewController: UIViewController {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
                 
             if Auth.auth().currentUser != nil {
-                self.performSegue(withIdentifier: "showScreen", sender: UIButton.self)
+                // self.performSegue(withIdentifier: "showScreen", sender: UIButton.self)
             } else {
                //User Not logged in
             }

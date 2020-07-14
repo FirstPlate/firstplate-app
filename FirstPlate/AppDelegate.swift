@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 import Moya
 import CoreLocation
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,11 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        let nav = storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
+        /* let nav = storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
         self.navigationController = nav
         window?.rootViewController = nav
         (nav?.topViewController as? RestaurantTableViewController)?.delegete = self
-
+        */
+        
         var latitude = UserDefaults.standard.double(forKey: "lat")
         var longitude = UserDefaults.standard.double(forKey: "lon")
         var coordinate = CLLocationCoordinate2DMake(latitude, longitude)

@@ -21,8 +21,37 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet var PasswordField: UITextField!
     
-    @IBAction func SignUpClicked(_ sender: Any) {
+    
+    @IBAction func signUpClicked(_ sender: Any) {
+        
+        Auth.auth().createUser(withEmail: EmailField.text!, password: PasswordField.text!) { authResult, error in
+            
+            
+            guard let user = authResult?.user, error == nil else {
+                
+                if error == nil{
+                    print("Successfully logging in")
+                    
+                }else{
+                    print("Cannot Login")
+                    print(error.debugDescription)
+                    
+                    let uialert = UIAlertController(title: "Cannot Login.", message: "Oops", preferredStyle: UIAlertController.Style.alert)
+                    uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(uialert, animated: true, completion: nil)
+                }
+                
+                return
+            }
+            
+            if error == nil {
+            self.performSegue(withIdentifier: "showScreen", sender: UIButton.self)
+            }
+
+        }
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,37 +74,13 @@ class SignUpViewController: UIViewController {
         
     }
     
-
-    @IBAction func signup(_ sender: Any) {
-        
-        Auth.auth().createUser(withEmail: EmailField.text!, password: PasswordField.text!) { authResult, error in
-         
-            guard let user = authResult?.user, error == nil else {
-                
-                
-                if error == nil{
-                  print("Successfully logging in")
-                    
-                }else{
-                    print("Cannot Login")
-                    print(error.debugDescription)
-                    
-                    let uialert = UIAlertController(title: "Cannot Login.", message: "Oops", preferredStyle: UIAlertController.Style.alert)
-                       uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(uialert, animated: true, completion: nil)
-                }
-                
-              return
-            }
-        }
-    }
     
     //Registering the login listener
      override func viewWillAppear(_ animated: Bool) {
          handle = Auth.auth().addStateDidChangeListener { (auth, user) in
              
              if Auth.auth().currentUser != nil {
-                 self.performSegue(withIdentifier: "showScreen", sender: UIButton.self)
+                 // self.performSegue(withIdentifier: "showScreen", sender: UIButton.self)
              } else {
                 //User Not logged in
             }

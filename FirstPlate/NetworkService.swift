@@ -41,7 +41,7 @@ enum YelpService {
             switch self {
             case let .search(lat, long):
                 return .requestParameters(
-                    parameters: ["latitude": lat, "longitude": long, "limit": 10], encoding: URLEncoding.queryString)
+                    parameters: ["latitude": lat, "longitude": long, "limit": 25], encoding: URLEncoding.queryString)
             case .details:
                 return .requestPlain
             }

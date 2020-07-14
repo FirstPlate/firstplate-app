@@ -25,27 +25,53 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZl-oT-7YE">
-                                <rect key="frame" x="169" y="342" width="76" height="39"/>
+                                <rect key="frame" x="118" y="342" width="178" height="39"/>
                                 <color key="backgroundColor" red="1" green="0.47492731030000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="UY7-Cf-svd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="V0G-qV-DUc" kind="show" id="WLR-2e-zuA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfK-uz-jHt">
-                                <rect key="frame" x="177.5" y="254" width="59" height="39"/>
+                                <rect key="frame" x="118.5" y="254" width="177" height="39"/>
                                 <color key="backgroundColor" red="1" green="0.47492731030000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="177" id="yKU-pq-7WC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Jr2-Ze-Ogd" kind="popoverPresentation" popoverAnchorView="JfK-uz-jHt" id="LxO-sf-Wnd">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewL-Yk-aLj">
+                                <rect key="frame" x="255" y="81" width="9" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CwQ-OI-jtP" kind="show" identifier="showScreen" id="rxN-GJ-7BB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -177,8 +203,7 @@
                                 <rect key="frame" x="167" y="447" width="80" height="30"/>
                                 <state key="normal" title="Let's Begin!"/>
                                 <connections>
-                                    <action selector="SignUpClicked:" destination="V0G-qV-DUc" eventType="touchUpInside" id="bln-CG-o6o"/>
-                                    <action selector="signup:" destination="V0G-qV-DUc" eventType="touchUpInside" id="VaY-8j-qlm"/>
+                                    <action selector="signUpClicked:" destination="V0G-qV-DUc" eventType="touchUpInside" id="f91-nn-iGU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstPlate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv7-VA-BAn">
@@ -308,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqr-K0-TZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286.9565217391305" y="134.59821428571428"/>
+            <point key="canvasLocation" x="1904" y="1035"/>
         </scene>
         <!--Restaurants For You-->
         <scene sceneID="xxD-0Y-kai">
@@ -473,6 +498,11 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="saveClick:" destination="h1O-GY-Foe" eventType="touchUpInside" id="Qwh-3c-rXv"/>
                                 </connections>
@@ -741,7 +771,7 @@
         <image name="placeholder" width="343" height="153"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0vt-jQ-fGY"/>
+        <segue reference="rxN-GJ-7BB"/>
         <segue reference="sB0-mI-ZPu"/>
     </inferredMetricsTieBreakers>
 </document>
