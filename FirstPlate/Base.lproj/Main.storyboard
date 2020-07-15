@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="9" y="135"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="seo-ue-Rkl">
@@ -416,7 +416,6 @@
                                     <outlet property="makerImageView" destination="Zp2-IK-Wt2" id="Dp7-El-76V"/>
                                     <outlet property="restaurantImageView" destination="l6k-Hx-Q02" id="mTT-Nk-Y0M"/>
                                     <outlet property="restaurantNameLabel" destination="haJ-iK-e51" id="CjX-SF-rRu"/>
-                                    <segue destination="FCb-d1-tep" kind="show" id="2jF-d0-zCw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -578,7 +577,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-i4-0xx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="902"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="946"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yi3-n7-pgC">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="902"/>
@@ -719,7 +718,7 @@
                                 </constraints>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jxP-kk-Llb">
-                                <rect key="frame" x="187.5" y="301" width="39" height="37"/>
+                                <rect key="frame" x="187.5" y="257" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.47492731030000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
@@ -789,6 +788,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rxN-GJ-7BB"/>
-        <segue reference="QsA-V7-sbh"/>
+        <segue reference="5pC-KS-x4P"/>
     </inferredMetricsTieBreakers>
 </document>

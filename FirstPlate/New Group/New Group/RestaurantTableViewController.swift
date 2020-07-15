@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 protocol ListActions: class {
-    func didTapCell(viewModel: RestaurantListViewModel)
+    func didTapCell(_ viewController: UIViewController, viewModel: RestaurantListViewModel)
 }
 
 
@@ -39,7 +39,7 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-
+        
         
     }
     
@@ -76,9 +76,13 @@ class RestaurantTableViewController: UITableViewController, CLLocationManagerDel
     // MARK: - Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailsViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") else { return }
+        navigationController?.pushViewController(detailsViewController, animated: true)
         let vm = viewModels[indexPath.row]
-        delegete?.didTapCell(viewModel: vm)
+        delegete?.didTapCell(detailsViewController, viewModel: vm)
     }
+    
+    
 
 
 

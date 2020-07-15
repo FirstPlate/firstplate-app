@@ -82,6 +82,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let nav = strongSelf.window?.rootViewController as? UINavigationController,
                     let restaurantListViewController = nav.topViewController as? RestaurantTableViewController {
                     restaurantListViewController.viewModels = viewModels ?? []
+                } else if let nav = strongSelf.storyboard.instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController {
+                strongSelf.navigationController = nav
+                strongSelf.window?.rootViewController?.present(nav, animated: true) {
+                        (nav.topViewController as? RestaurantTableViewController)?.delegete = self
+                        (nav.topViewController as? RestaurantTableViewController)?.viewModels = viewModels ?? []
+                    }
+
                 }
             case .failure(let error):
                 print("Error: \(error)")
@@ -90,16 +97,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
     
-    private func loadDetails(withId id: String) {
+    private func loadDetails(for viewController: UIViewController, withId id: String) {
         service.request(.details(id:id)) { [weak self] (result) in
             switch result {
             case .success(let response):
                 guard let strongSelf = self else { return }
                 if let details = try? strongSelf.jsonDecoder.decode(Details.self, from: response.data) {
                 let detailsViewModel = DetailsViewModel(details: details)
-                (strongSelf.navigationController?.topViewController as? DetailsFoodViewController)?.viewModel = detailsViewModel
-                    
-                } 
+                (viewController as? DetailsFoodViewController)?.viewModel = detailsViewModel
+                }
             case .failure(let error):
                 print("Failed to get details \(error)")
             }
@@ -111,8 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: ListActions {
     
-    func didTapCell(viewModel: RestaurantListViewModel) {
-        loadDetails(withId: viewModel.id)
+    func didTapCell(_ viewController: UIViewController, viewModel: RestaurantListViewModel) {
+        loadDetails(for: viewController, withId: viewModel.id)
     }
 }
 
